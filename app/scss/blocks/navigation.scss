@@ -1,0 +1,79 @@
+.navigation {    
+	@include tablet {
+		position: fixed;
+		transform: translateX(100%);
+		opacity: 0;
+
+		top: 61px;
+		right: 0;		
+		max-width: 50%;
+		min-width: 30%;
+		margin: 0;
+		height: 100%;
+		background-color: #131417;
+		z-index: 3;		
+		overflow: auto;											
+
+	}
+	@include mobil {
+		top: 56px;
+		max-width: 100%;
+		min-width: 50%;
+	}
+
+	&._active {
+		transform: translateX(0%);
+		opacity: 1;
+		transition: all linear .3s;
+
+	}
+	      
+	&__list {
+		display: flex;
+		justify-content: space-between;
+		@include tablet {
+			flex-direction: column;
+			background-color: #111;
+			margin-bottom: 55px;
+		}
+	}
+	&__item {
+		@include tablet {
+			border-bottom: 1px solid rgba(#fff, .3);
+			padding: 10px 10px;
+		}
+	}
+	&__item:last-child {
+		@include tablet {
+			border-bottom: none;
+		}
+	}
+	&__link {
+		@include font(18px, 133%, 400);
+		color: #ffffff;
+		transition: color linear .3s;
+		padding: 5px 20px;		
+		@include desktop {
+			@include font(14px, 133%, 400);
+			padding: 8px 15px;
+		}
+		@include laptop {
+			@include font(13px, 133%, 400);
+			padding: 7px 5px;
+		}
+		@include tablet {
+			display: inline-block;
+			vertical-align: bottom;
+			width: 100%;
+			z-index: 100;
+			padding: 12px 8px;
+		}
+	}
+	&__link:hover {
+		color: $yellow;
+		@include tablet {
+			color: #fff;
+		}
+	}
+		
+}

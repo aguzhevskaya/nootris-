@@ -1,0 +1,27 @@
+@mixin font($fz, $lh, $fw: null, $ff: $basic-family) {
+    font: $fw #{$fz}/#{$lh} $ff;
+}
+
+@mixin desktop {
+    @media (max-width: 1260px)  {
+        @content;
+    }
+}
+
+@mixin laptop {
+	@media (max-width: 1023px) {
+		@content;
+	}
+}
+
+@mixin tablet {
+	@media (max-width: 767px) {
+		@content;
+	}
+}
+
+@mixin mobil {
+    @media (max-width: 424px)  {
+        @content;        
+    }
+}

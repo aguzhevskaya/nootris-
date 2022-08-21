@@ -1,0 +1,7 @@
+.body {
+	@include tablet {
+		&._lock {
+			overflow: hidden;
+		}
+	}
+}
